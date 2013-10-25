@@ -3,7 +3,7 @@
 
 import random,time
 
-N = 10000 # amount to data to be sort
+N = 10000 # amount of data to be sort
 a = []
 
 def swap(x,y):

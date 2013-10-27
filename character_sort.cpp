@@ -2,43 +2,32 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include<time.h>
+#define N 100
 
-#define N 10
+void DisplayNumb(int str[]);
 
-void DisplayNumb(int a[]);
-
-void NumValueGen(char a[]){
-	for(int i=0;i<N;i++) a[i] = 65+rand()%25;
-}
-
-
-void InsertionSort(char a[]){
-	int i,j,key;
-	for(i=1;i<N;i++){
-		key = a[i];
-		for(j=i-1;j>=0 && a[j]>key;j--){
-			a[j+1] = a[j];
+void InsertionSort(char str[]){
+	int i,j,key,len = strlen(str);
+	for(i=1;i<len;i++){
+		key = str[i];
+		for(j=i-1;j>=0 && str[j]>key;j--){
+			str[j+1] = str[j];
 		}
-		a[j+1] = key;
+		str[j+1] = key;
 	}
 }
 
-
-void DisplayChar(char a[]){
-	for(int i=0;i<N;i++) printf("%c ",a[i]);
-}
 int main(){
-	char a[N];
+	char str[N];
 	//double start_time,end_time;
-	NumValueGen(a);
-	printf("After Sort :\n");
-	DisplayChar(a);
+	gets(str);
 	//start_time = clock();
-	InsertionSort(a);
+	InsertionSort(str);
 	//end_time = clock();
 	printf("\nAfter Sort :\n");
-	DisplayChar(a);
+	puts(str);
 	//printf("\nAlgorithm Execute Time : %.2lf",(end_time-start_time)/CLOCKS_PER_SEC);
 	return 0;
 }

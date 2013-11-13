@@ -33,7 +33,7 @@ void QuickSort(int a[],int p,int r){
 
 int main(){
 	int i,a[N];
-	for(i=0;i<N;i++) a[i] = rand()%100; // getting rand number for Array a[]
+	for(i=0;i<N;i++) a[i] = rand()%100; // initializing Array a[] with random numbers
 	for(i=0;i<N;i++) printf("%d ",a[i]); // Displaying Array a[] before sorting
 	QuickSort(a,0,N-1);
 	printf("\n");

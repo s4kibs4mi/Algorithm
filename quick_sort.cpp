@@ -3,30 +3,32 @@
 #include<time.h>
 #define N 100000 // number of data to be sort
 
-void swap(int *x,int *y){
-	int hold;
-	hold = *x;
-	*x = *y;
-	*y = hold;
+void swap(int *a,int *b){
+	int h = *a;
+	*a = *b;
+	*b = h;
 }
 
 int partition(int a[],int p,int r){
-	int x = a[r],i = p-1,j;
+	int i,j,x;
+	i = p;
+	x = a[r];
 	for(j=p;j<r;j++){
 		if(a[j]<=x){
+			swap(&a[j],&a[i]);
 			i++;
-			swap(&a[i],&a[j]);
 		}
 	}
-	swap(&a[i+1],&a[r]);
-	return i+1;
+	swap(&a[i],&a[r]);
+	return i;
 }
 
-void quickSort(int a[],int p,int r){
+void QuickSort(int a[],int p,int r){
+	int q;
 	if(p<r){
-		int q = partition(a,p,r);
-		quickSort(a,p,q-1);
-		quickSort(a,q+1,r);
+		q = partition(a,p,r); // partitioning Array a[]
+		QuickSort(a,p,q-1);
+		QuickSort(a,q+1,r);
 	}
 }
 

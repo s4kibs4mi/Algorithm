@@ -40,7 +40,7 @@ int find(int parent[],int r){
 }
 
 int main(){
-    freopen("in.txt","r",stdin);
+    //freopen("in.txt","r",stdin);
     int v,e;
     scanf("%d %d",&v,&e);
     int a[e][3],parent[v];

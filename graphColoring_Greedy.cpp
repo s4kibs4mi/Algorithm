@@ -8,7 +8,7 @@ using namespace std;
 
 void ColorGraph(){
 	vector < vector <bool> > graph;
-	vector < int> colored;
+	vector <int> colored;
 	int n,e,u,v;
 	cout << "Number of vertex : ";
 	cin >> n;
@@ -21,7 +21,7 @@ void ColorGraph(){
 		for(int j=0;j < n; j++)
 			graph[i].push_back(false); // Making All vertex connectivity False
 	}
-	for(int i=0;i < n; i++) colored.push_back(-1);
+	for(int i=0;i < n; i++) colored.push_back(-1); // Setting default color value -1
 	
 	cout << "Number of Edges : ";
 	cin >> e;
